@@ -1,0 +1,15 @@
+.loginPage__wrapper {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.loginPage__input,
+.loginPage__button {
+  margin-top: 8px !important;
+}
+
+@media (max-width: 350px) {
+  .loginPage__wrapper {
+    width: fit-content;
+  }
+}

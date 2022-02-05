@@ -1,0 +1,14 @@
+.registerPage__wrapper {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.registerPage__input {
+  margin-top: 8px !important;
+}
+
+@media (max-width: 350px) {
+  .registerPage__wrapper {
+    width: fit-content;
+  }
+}
