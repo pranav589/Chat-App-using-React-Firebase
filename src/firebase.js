@@ -15,7 +15,12 @@ import "firebase/compat/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  //configs
+  apiKey: "AIzaSyAzGN-n2U6t-0VTmCrP5_6JIoE7MuncP4E",
+  authDomain: "messenger-d3cc7.firebaseapp.com",
+  projectId: "messenger-d3cc7",
+  storageBucket: "messenger-d3cc7.appspot.com",
+  messagingSenderId: "408943971709",
+  appId: "1:408943971709:web:f0eda9f0d829f7b6089014",
 };
 
 // Initialize Firebase
