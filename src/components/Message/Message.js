@@ -19,7 +19,7 @@ function Message({ msg, user1 }) {
         {msg.text}
         <br />
         <small>
-          <Moment fromNow={msg.createdAt.toDate()}></Moment>
+          <Moment format="YYYY/MM/DD HH:mm">{msg.createdAt.toDate()}</Moment>
         </small>
       </p>
     </div>
