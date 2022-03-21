@@ -105,6 +105,7 @@ function ProfilePage() {
             type="file"
             accept="'image/*"
             onChange={(e) => setImg(e.target.files[0])}
+            className="profile__img"
           />
         </div>
       </div>

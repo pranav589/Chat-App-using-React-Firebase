@@ -124,6 +124,7 @@ function HomePage() {
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
+        text="Sending Image..."
       />
     );
   }
@@ -159,6 +160,7 @@ function HomePage() {
               text={text}
               setText={setText}
               setImg={setImg}
+              img={img}
             />
           </div>
         ) : (

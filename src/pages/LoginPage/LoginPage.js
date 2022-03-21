@@ -55,6 +55,47 @@ const LoginPage = () => {
       }
     }
   };
+
+  const handleGuestLoginOne = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      const result = await login("guestone@gmail.com", "password");
+      await updateDoc(doc(db, "users", result.user.uid), {
+        isOnline: true,
+      });
+      setLoading(false);
+      toast.success("Welcome Guest-One!");
+
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
+      toast.error(error.message);
+      navigate("/");
+    }
+  };
+
+  const handleGuestLoginTwo = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      const result = await login("guesttwo@gmail.com", "password");
+      await updateDoc(doc(db, "users", result.user.uid), {
+        isOnline: true,
+      });
+      setLoading(false);
+      toast.success("Welcome Guest-One!");
+
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
+      toast.error(error.message);
+      navigate("/");
+    }
+  };
+
   if (loading) {
     return (
       <Loader
@@ -109,10 +150,35 @@ const LoginPage = () => {
             >
               Login
             </Button>
+
             <Typography variant="subtitle1" style={{ marginTop: 8 }}>
               New here? <Link to="/register">Register</Link>{" "}
             </Typography>
           </form>
+          <Button
+            type="submit"
+            variant="contained"
+            style={{
+              backgroundColor: "#1bbd7e",
+              marginTop: 8,
+              width: "100%",
+            }}
+            onClick={handleGuestLoginOne}
+          >
+            Guest Login 1
+          </Button>
+          <Button
+            type="submit"
+            variant="contained"
+            style={{
+              backgroundColor: "#1bbd7e",
+              marginTop: 8,
+              width: "100%",
+            }}
+            onClick={handleGuestLoginTwo}
+          >
+            Guest Login 2
+          </Button>
         </Paper>
       </div>
     );

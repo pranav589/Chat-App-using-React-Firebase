@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UploadIcon from "@mui/icons-material/Upload";
 import { Button } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import "./MessageForm.css";
 
-function MessageForm({ handleSend, text, setText, setImg }) {
+function MessageForm({ handleSend, text, setText, setImg, img }) {
   return (
     <form className="message_form" onSubmit={handleSend}>
       <label htmlFor="img">
@@ -14,8 +14,13 @@ function MessageForm({ handleSend, text, setText, setImg }) {
         type="file"
         id="img"
         accept="image/*"
+        onChange={(e) => {
+          alert(
+            "Image Selected. Please type a caption for it or directly click send button!"
+          );
+          setImg(e.target.files[0]);
+        }}
         style={{ display: "none" }}
-        onChange={(e) => setImg(e.target.files[0])}
       />
       <div>
         <input
@@ -38,7 +43,11 @@ function MessageForm({ handleSend, text, setText, setImg }) {
           Send
         </Button>
 
-        <SendIcon style={{ color: "#1bbd7e" }} className="mob" />
+        <SendIcon
+          style={{ color: "#1bbd7e", cursor: "pointer" }}
+          className="mob"
+          onClick={handleSend}
+        />
       </div>
     </form>
   );
